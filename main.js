@@ -1,12 +1,14 @@
 const submitBtn = document.getElementById('submitBtn');
+const username = document.getElementById('name');
 const textbox = document.getElementById('message');
 const info = document.getElementById('infoText');
 
 function sendMessage() {
     const message = textbox.value;
+    const user = username.value;
     const request = new XMLHttpRequest();
     const params = {
-        username: "Hey Toby ;)",
+        username: user,
         content: message
     }
     if (message != '') {
@@ -16,6 +18,7 @@ function sendMessage() {
 
         info.innerHTML = 'Message sent';
         textbox.value = '';
+        username.value = '';
     } else {
         info.innerHTML = 'Invalid message';
     }

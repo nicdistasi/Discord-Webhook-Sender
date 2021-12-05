@@ -10,14 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>Discord Webhook Messager</h1>
     <div class="glass" id="main">
         <form>
-            <label for="message">Webhook Message:</label><br><br>
+            <label for="message">Name:</label><br>
+            <textarea id="name" name="name"></textarea><br><br>
+            <label for="message">Message:</label><br>
             <textarea id="message" name="message"></textarea>
         </form>
+        <button id="submitBtn">Send</button>
         <p id="infoText"></p>
     </div>
-    <button class="glass" id="submitBtn">Send</button>
 </body>
 </html>
 <script src="main.js"></script>
@@ -47,11 +50,17 @@
 	    }
     }
 
+    h1 {
+        position: absolute;
+        top: 5%; left: 5%;
+        font-size: 20px; font-weight: 600;
+        color: whitesmoke;
+    }
+
     #main {
         position: absolute;
-        width: 300px; height: 200px;
+        width: 300px; height: 300px;
         padding: 40px;
-        transform: translateY(-50px);
     }
 
     .glass {
@@ -68,13 +77,20 @@
 
     textarea {
         width: 210px; height: 60px;
-        padding: 5px;
+        padding: 5px; margin-top: 5px;
         resize: none;
         background: rgba(255, 255, 255, 0.7);
         border: none; border-radius: 10px;
         outline: 0px solid rgba(255, 255, 255, 0);
         box-shadow: 0 0 20px 0 rgba(33, 33, 34, 0);
+        font-family: inherit;
+        font-weight: 500;
         transition: all 0.5s;
+    }
+
+    #name {
+        height: 20px;
+        font-weight: 600;
     }
 
     textarea:focus {
@@ -83,24 +99,21 @@
     }
 
     #infoText {
+        float: right;
         color: whitesmoke;
         font-size: 12px; font-weight: 400;
     }
 
     #submitBtn {
-        position: absolute;
-        transform: translateY(100px);
-        padding: 20px 25px;
-        color: whitesmoke;
-        font-size: 16px; font-weight: 600;
-        outline: 0px solid rgba(255, 255, 255, 0);
+        padding: 0; margin-top: 30px;
+        color: whitesmoke; background: none;
+        border: none;
+        font-size: 18px; font-weight: 600;
         transition: all 0.5s;
     }
 
     #submitBtn:hover {
         cursor: pointer;
-        outline: 1px solid rgba(255, 255, 255, 1);
-        box-shadow: 0 0 20px 0 rgba(33, 33, 34, 0.2)
     }
 
 </style>
